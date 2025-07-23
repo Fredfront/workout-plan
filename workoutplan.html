@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite 12-Week Hybrid Training Program - Enhanced Edition</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background: #f8f9fa;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      /* Fixed Navigation */
+      .nav-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(44, 62, 80, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 15px 0;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .nav-brand {
+        color: white;
+        font-weight: 700;
+        font-size: 1.2em;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: #3498db;
+        transform: translateY(-2px);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+
+      /* Progress Bar */
+      .progress-container {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 999;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #3498db, #e74c3c);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 80px;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="m0 20v-10c10-5 20-5 30 0s20 5 30 0s20-5 30 0s20 5 30 0v10z" fill="rgba(255,255,255,0.1)"/></svg>');
+        background-size: 200px 40px;
+        animation: wave 10s infinite linear;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-200px);
+        }
+      }
+
+      .header h1 {
+        font-size: 3em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .header .subtitle {
+        font-size: 1.3em;
+        font-weight: 300;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Quick Stats */
+      .quick-stats {
+        background: white;
+        padding: 30px;
+        margin: -30px 20px 0;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        transition: transform 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: #3498db;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.9em;
+        color: #6c757d;
+        font-weight: 500;
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 40px;
+        border-bottom: 1px solid #ecf0f1;
+      }
+
+      .section h2 {
+        color: white;
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        border-bottom: 4px solid #3498db;
+        padding: 20px 30px 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .section h3 {
+        color: white;
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        font-size: 1.5em;
+        margin: 30px 0 20px 0;
+        font-weight: 600;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+        position: relative;
+      }
+
+      .section h3::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 2px;
+      }
+
+      /* Goals Grid */
+      .goals-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .goal-card {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .goal-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+      }
+
+      .goal-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+      }
+
+      .goal-card:hover::before {
+        top: -30%;
+        right: -30%;
+      }
+
+      .goal-card .number {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .goal-card .label {
+        font-size: 1.1em;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+      }
+
+      .goal-card small {
+        display: block;
+        margin-top: 8px;
+        opacity: 0.9;
+        font-size: 0.9em;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* RPE Scale */
+      .rpe-scale {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+        margin: 30px 0;
+      }
+
+      .rpe-item {
+        background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        color: white;
+        padding: 20px 15px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9em;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .rpe-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Tables */
+      .workout-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .workout-table th {
+        background: linear-gradient(135deg, #34495e, #2c3e50);
+        color: white;
+        padding: 20px 15px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.95em;
+      }
+
+      .workout-table td {
+        padding: 18px 15px;
+        border-bottom: 1px solid #ecf0f1;
+        transition: background-color 0.3s ease;
+      }
+
+      .workout-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      .workout-table tr:hover {
+        background-color: #e3f2fd;
+        transform: scale(1.01);
+      }
+
+      /* Block Headers */
+      .week-header {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 30px;
+        margin: 40px 0 30px 0;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 1.6em;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .week-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Info Boxes */
+      .tips-box,
+      .exercise-guide,
+      .running-guide,
+      .mobility-box,
+      .progress-tracker {
+        border-radius: 15px;
+        padding: 25px;
+        margin: 25px 0;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tips-box {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+      }
+
+      .exercise-guide {
+        background: linear-gradient(135deg, #e8f5e8, #d4edda);
+        border-left: 5px solid #27ae60;
+        color: #155724;
+      }
+
+      .running-guide {
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        border-left: 5px solid #2196f3;
+        color: #0d47a1;
+      }
+
+      .mobility-box {
+        background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+        border-left: 5px solid #9c27b0;
+        color: #4a148c;
+      }
+
+      .progress-tracker {
+        background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        border-left: 5px solid #ffc107;
+        color: #856404;
+      }
+
+      .tips-box h4,
+      .exercise-guide h4,
+      .running-guide h4,
+      .mobility-box h4,
+      .progress-tracker h4 {
+        margin-bottom: 15px;
+        font-size: 1.3em;
+        font-weight: 600;
+      }
+
+      /* Links */
+      .mobility-box a {
+        color: #7b1fa2;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom-color 0.3s ease;
+      }
+
+      .mobility-box a:hover {
+        border-bottom-color: #7b1fa2;
+      }
+
+      /* Floating Action Button */
+      .fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .fab:hover {
+        transform: scale(1.1) rotate(15deg);
+        box-shadow: 0 12px 35px rgba(52, 152, 219, 0.6);
+      }
+
+      /* Mobile Optimizations */
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: rgba(44, 62, 80, 0.95);
+          flex-direction: column;
+          padding: 20px;
+          border-radius: 0 0 15px 15px;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .container {
+          margin: 10px;
+        }
+
+        .header {
+          padding: 40px 20px;
+        }
+
+        .header h1 {
+          font-size: 2em;
+        }
+
+        .section {
+          padding: 25px 20px;
+        }
+
+        .goals-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .quick-stats {
+          margin: -20px 10px 0;
+          padding: 20px;
+        }
+
+        .rpe-scale {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 8px;
+        }
+
+        .workout-table {
+          font-size: 0.9em;
+        }
+
+        .workout-table th,
+        .workout-table td {
+          padding: 12px 8px;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #1a1a1a;
+          color: #e0e0e0;
+        }
+
+        .container {
+          background: #2d2d2d;
+        }
+
+        .section {
+          border-bottom-color: #404040;
+        }
+
+        .section h2 {
+          background: linear-gradient(135deg, #3498db, #2980b9);
+          color: white;
+        }
+
+        .workout-table {
+          background: #2d2d2d;
+        }
+
+        .workout-table tr:nth-child(even) {
+          background-color: #343434;
+        }
+
+        .workout-table tr:hover {
+          background-color: #404040;
+        }
+      }
+
+      /* Smooth scrolling and animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed Navigation -->
+    <nav class="nav-header">
+      <div class="nav-content">
+        <div class="nav-brand">💪 Hybrid Training</div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#overview" class="nav-link">Overview</a></li>
+          <li><a href="#technique-guide" class="nav-link">Technique</a></li>
+          <li><a href="#mobility" class="nav-link">Mobility</a></li>
+          <li><a href="#block1" class="nav-link">Block 1</a></li>
+          <li><a href="#block2" class="nav-link">Block 2</a></li>
+          <li><a href="#block3" class="nav-link">Block 3</a></li>
+          <li><a href="#completion" class="nav-link">Completion</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+      </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+      <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+          <h1>Elite 12-Week Hybrid Training Program</h1>
+          <div class="subtitle">Strength • Endurance • Performance • Enhanced Edition</div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Weeks</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">48</span>
+            <span class="stat-label">Sessions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">60</span>
+            <span class="stat-label">Max Minutes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Main Goals</span>
+          </div>
+        </div>
+
+        <!-- PROGRAM OVERVIEW -->
+        <div class="section fade-in" id="overview">
+          <h2>🎯 PROGRAM GOALS & OVERVIEW</h2>
+
+          <div class="goals-grid">
+            <div class="goal-card">
+              <div class="number">10K</div>
+              <div class="label">Sub-50 Minutes</div>
+              <small>(4:59/km average)</small>
+            </div>
+            <div class="goal-card">
+              <div class="number">15+</div>
+              <div class="label">Bodyweight Pull-ups</div>
+              <small>(From current baseline)</small>
+            </div>
+            <div class="goal-card">
+              <div class="number">2.45m</div>
+              <div class="label">Vertical Jump</div>
+              <small>(Maintain current)</small>
+            </div>
+            <div class="goal-card">
+              <div class="number">60min</div>
+              <div class="label">Session Duration</div>
+              <small>(Maximum per workout)</small>
+            </div>
+          </div>
+
+          <h3>📊 RPE Scale Reference</h3>
+          <div class="rpe-scale">
+            <div class="rpe-item">1-2<br />Very Easy</div>
+            <div class="rpe-item">3-4<br />Easy</div>
+            <div class="rpe-item">5-6<br />Moderate</div>
+            <div class="rpe-item">7<br />Hard</div>
+            <div class="rpe-item">8<br />Very Hard</div>
+            <div class="rpe-item">9<br />Extremely Hard</div>
+            <div class="rpe-item">10<br />Maximum</div>
+          </div>
+
+          <h3>🏃‍♂️ Running Pace Guide</h3>
+          <div class="running-guide">
+            <h4>Target Pace Breakdown</h4>
+            <p><strong>10K Goal Pace:</strong> 4:59/km (50:00 total)</p>
+            <p><strong>Threshold Pace:</strong> 5:05-5:10/km (conversational but challenging)</p>
+            <p><strong>Interval Pace:</strong> 4:30-4:50/km (hard but sustainable for reps)</p>
+            <p><strong>Easy Pace:</strong> 5:15-5:30/km (fully conversational)</p>
+            <p><strong>Recovery Pace:</strong> 5:30+/km (very comfortable)</p>
+          </div>
+        </div>
+
+        <!-- EXERCISE TECHNIQUE GUIDE -->
+        <div class="section fade-in" id="technique-guide">
+          <h2>🏋️‍♂️ EXERCISE TECHNIQUE GUIDE</h2>
+
+          <div class="exercise-guide">
+            <h4>🦵 Lower Body Exercises</h4>
+            <p>
+              <strong>Back Squat:</strong> Feet shoulder-width apart, bar on upper traps. Descend until hip crease below
+              knee level. Drive through heels, maintain neutral spine throughout.
+            </p>
+            <p>
+              <strong>Romanian Deadlift (RDL):</strong> Hip-hinge movement, slight knee bend. Lower bar along legs until
+              hamstring stretch. Drive hips forward to return.
+            </p>
+            <p>
+              <strong>Bulgarian Split Squat:</strong> Rear foot elevated 30cm. Lower into lunge until front thigh
+              parallel. Drive through front heel to return.
+            </p>
+            <p>
+              <strong>Box Jumps:</strong> Land softly on balls of feet, absorb impact with knee flexion. Step down
+              rather than jumping down to preserve knees.
+            </p>
+            <p>
+              <strong>Depth Jumps:</strong> Step off box, land and immediately jump vertically. Focus on minimal ground
+              contact time.
+            </p>
+          </div>
+
+          <div class="exercise-guide">
+            <h4>💪 Upper Body Exercises</h4>
+            <p>
+              <strong>Pull-ups:</strong> Full hang to full chin over bar. Control descent, no kipping. Add weight when
+              bodyweight exceeds 10 clean reps.
+            </p>
+            <p>
+              <strong>Incline DB Press:</strong> 75-80° angle, full range of motion. Lower to chest level, press to arm
+              extension.
+            </p>
+            <p>
+              <strong>Bent Over Barbell Row:</strong> Hip-hinge position, bar to lower chest/upper abdomen. Squeeze
+              shoulder blades together at top.
+            </p>
+            <p>
+              <strong>T-Bar Rows:</strong> Similar to barbell row but with T-bar apparatus. Focus on pulling elbows
+              back, not just moving weight.
+            </p>
+            <p>
+              <strong>Arnold Press:</strong> Start with palms facing body, rotate outward while pressing overhead.
+              Reverse the motion on descent.
+            </p>
+          </div>
+
+          <div class="exercise-guide">
+            <h4>🏃‍♂️ Running Technique</h4>
+            <p>
+              <strong>Proper Form:</strong> Slight forward lean from ankles, midfoot strike, cadence around 180
+              steps/minute.
+            </p>
+            <p>
+              <strong>Breathing:</strong> Rhythmic breathing - try 3:2 pattern (3 steps inhale, 2 steps exhale) for
+              moderate efforts.
+            </p>
+            <p>
+              <strong>Pacing:</strong> Use a GPS watch or track. Start conservatively and build into target pace over
+              first 400-800m.
+            </p>
+            <p>
+              <strong>Recovery Between Intervals:</strong> Walk or very easy jog. Heart rate should drop to ~120-130 bpm
+              before next rep.
+            </p>
+          </div>
+        </div>
+
+        <!-- MOBILITY AND RECOVERY GUIDE -->
+        <div class="section fade-in" id="mobility">
+          <h2>🧘‍♂️ MOBILITY & RECOVERY PROTOCOLS</h2>
+
+          <div class="mobility-box">
+            <h4>Daily Mobility Routine (10-15 minutes)</h4>
+            <p>
+              <strong>Hip Flexor Stretch:</strong>
+              <a href="https://www.heromovement.net/videos/couch-stretch/" target="_blank">Couch Stretch Tutorial</a> -
+              Hold 90 seconds each side
+            </p>
+            <p>
+              <strong>IT Band Release:</strong>
+              <a href="https://www.sports-injury-physio.com/post/foam-rolling-it-band-dos-and-don-ts" target="_blank"
+                >Foam Rolling IT Band Guide</a
+              >
+              - 60 seconds each side
+            </p>
+            <p>
+              <strong>Calf Stretch:</strong>
+              <a href="https://www.hss.edu/health-library/move-better/hip-flexor-stretch" target="_blank"
+                >Wall Calf Stretch Guide</a
+              >
+              - 60 seconds each leg
+            </p>
+            <p>
+              <strong>Hamstring Stretch:</strong>
+              <a href="https://www.healthline.com/health/fitness-exercise/foam-rolling-how-to" target="_blank"
+                >Standing Hamstring Stretch</a
+              >
+              - 60 seconds each leg
+            </p>
+            <p>
+              <strong>Glute Stretch:</strong>
+              <a href="https://www.thehealthy.com/exercise/couch-stretch/" target="_blank">Pigeon Pose Guide</a> - 90
+              seconds each side
+            </p>
+          </div>
+
+          <div class="mobility-box">
+            <h4>Pre-Workout Dynamic Warm-up (8-10 minutes)</h4>
+            <p>
+              <strong>Leg Swings:</strong>
+              <a href="https://www.themovementstandard.com.au/blog/how-to-hip-flexor-stretches" target="_blank"
+                >Dynamic Leg Swings</a
+              >
+              - 10 each direction
+            </p>
+            <p>
+              <strong>Walking Lunges:</strong>
+              <a href="https://fitnessdrum.com/couch-stretch/" target="_blank">Dynamic Walking Lunges</a> - 10 each leg
+            </p>
+            <p>
+              <strong>High Knees:</strong>
+              <a href="https://ksquaredfitness.com/hip-flexor-stretches/" target="_blank">High Knees Drill</a> - 20
+              steps
+            </p>
+            <p>
+              <strong>Butt Kicks:</strong>
+              <a href="https://www.yourhousefitness.com/blog/exercise-tutorial-couch-stretch" target="_blank"
+                >Butt Kicks Drill</a
+              >
+              - 20 steps
+            </p>
+            <p>
+              <strong>Arm Circles:</strong>
+              <a href="https://www.garagegymreviews.com/couch-stretch" target="_blank">Dynamic Arm Circles</a> - 10 each
+              direction
+            </p>
+          </div>
+
+          <div class="mobility-box">
+            <h4>Post-Workout Recovery (15-20 minutes)</h4>
+            <p>
+              <strong>Child's Pose:</strong>
+              <a href="https://www.healthline.com/health/couch-stretch" target="_blank">Child's Pose Guide</a> - Hold 60
+              seconds
+            </p>
+            <p>
+              <strong>Cat-Cow Stretch:</strong>
+              <a href="https://mathiasmethod.com/mobility-exercises/hip-flexor-stretch/" target="_blank"
+                >Cat-Cow Movement</a
+              >
+              - 10 repetitions
+            </p>
+            <p>
+              <strong>Seated Spinal Twist:</strong>
+              <a href="https://www.kinetic-revolution.com/foam-rolling-for-itb-syndrome-yes-or-no/" target="_blank"
+                >Spinal Twist Tutorial</a
+              >
+              - 30 seconds each side
+            </p>
+            <p>
+              <strong>Downward Dog:</strong>
+              <a href="https://www.muscleandstrength.com/exercises/foam-rolling-it-band" target="_blank"
+                >Downward Dog Pose</a
+              >
+              - Hold 45 seconds
+            </p>
+            <p>
+              <strong>Foam Rolling:</strong>
+              <a href="https://nlphysio.com/the-truth-about-foam-rolling/" target="_blank">Full Body Foam Rolling</a> -
+              Focus on worked muscles
+            </p>
+          </div>
+        </div>
+
+        <!-- BLOCK 1: WEEKS 1-4 -->
+        <div class="week-header" id="block1">📅 BLOCK 1: BASE BUILDING - WEEKS 1-4</div>
+
+        <div class="section fade-in">
+          <h2>WEEK 1</h2>
+
+          <div class="progress-tracker">
+            <h4>Week 1 Focus</h4>
+            <p>
+              Establish movement patterns, baseline fitness assessment, and adaptation to hybrid training volume.
+              Running emphasis on aerobic base development.
+            </p>
+          </div>
+
+          <h3>Day 1 - Lower Power + Vertical Jump (Monday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Exercise</th>
+              <th>Sets x Reps</th>
+              <th>Rest</th>
+              <th>RPE</th>
+              <th>Coaching Notes</th>
+            </tr>
+            <tr>
+              <td>Dynamic Warm-up</td>
+              <td>8-10 min</td>
+              <td>-</td>
+              <td>4</td>
+              <td>Follow pre-workout mobility routine</td>
+            </tr>
+            <tr>
+              <td>Box Jumps</td>
+              <td>4x3</td>
+              <td>90s</td>
+              <td>8</td>
+              <td>60-80cm box, soft landing, step down</td>
+            </tr>
+            <tr>
+              <td>Back Squat</td>
+              <td>4x5</td>
+              <td>3min</td>
+              <td>8</td>
+              <td>80-85% estimated max, full depth</td>
+            </tr>
+            <tr>
+              <td>Romanian Deadlift</td>
+              <td>3x6</td>
+              <td>2min</td>
+              <td>8</td>
+              <td>Feel hamstring stretch, control eccentric</td>
+            </tr>
+            <tr>
+              <td>Bulgarian Split Squat</td>
+              <td>3x8/leg</td>
+              <td>90s</td>
+              <td>7</td>
+              <td>Use dumbbells, rear foot elevated</td>
+            </tr>
+            <tr>
+              <td>Single Leg Calf Raise</td>
+              <td>3x12/leg</td>
+              <td>60s</td>
+              <td>7</td>
+              <td>Full ROM, 1-second pause at top</td>
+            </tr>
+            <tr>
+              <td>Plank</td>
+              <td>3x45s</td>
+              <td>60s</td>
+              <td>7</td>
+              <td>Maintain neutral spine, breathe normally</td>
+            </tr>
+            <tr>
+              <td>Cool-down Stretch</td>
+              <td>10-15 min</td>
+              <td>-</td>
+              <td>3</td>
+              <td>Focus on worked muscle groups</td>
+            </tr>
+          </table>
+
+          <h3>Day 2 - Speed Intervals + Mobility (Tuesday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Segment</th>
+              <th>Details</th>
+              <th>RPE</th>
+              <th>Purpose</th>
+            </tr>
+            <tr>
+              <td>Dynamic Warm-up</td>
+              <td>10 min walking + drills</td>
+              <td>4</td>
+              <td>Prepare body for speed work</td>
+            </tr>
+            <tr>
+              <td>Easy Run</td>
+              <td>2km @ 5:20/km</td>
+              <td>5</td>
+              <td>Further warm-up, conversational pace</td>
+            </tr>
+            <tr>
+              <td>Strides</td>
+              <td>6x50m @ 4:40/km</td>
+              <td>6</td>
+              <td>60s walk recovery, neural activation</td>
+            </tr>
+            <tr>
+              <td>Main Set</td>
+              <td>5x800m @ 4:50/km</td>
+              <td>8-9</td>
+              <td>VO2 development, 90s walk recovery</td>
+            </tr>
+            <tr>
+              <td>Cool-down</td>
+              <td>1.5km @ 5:30/km</td>
+              <td>4</td>
+              <td>Lactate clearance, easy pace</td>
+            </tr>
+            <tr>
+              <td>Mobility Session</td>
+              <td>15min focused work</td>
+              <td>-</td>
+              <td>Hip flexors, IT band, calves</td>
+            </tr>
+          </table>
+
+          <div class="running-guide">
+            <h4>Week 1 Running Notes</h4>
+            <p>
+              Focus on establishing consistent pacing. Use first two 800m intervals to find rhythm, then maintain pace
+              for remaining reps. Walk recovery should bring heart rate to ~130 bpm before next interval.
+            </p>
+          </div>
+
+          <!-- Continue with remaining days -->
+          <h3>Day 3 - Upper Power + Pull Focus (Thursday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Exercise</th>
+              <th>Sets x Reps</th>
+              <th>Rest</th>
+              <th>RPE</th>
+              <th>Coaching Notes</th>
+            </tr>
+            <tr>
+              <td>Dynamic Warm-up</td>
+              <td>8-10 min</td>
+              <td>-</td>
+              <td>4</td>
+              <td>Arm circles, shoulder mobility</td>
+            </tr>
+            <tr>
+              <td>Pull-ups (BW or Assisted)</td>
+              <td>5x5-8</td>
+              <td>2.5min</td>
+              <td>8</td>
+              <td>If can't do 5, use assistance or negatives</td>
+            </tr>
+            <tr>
+              <td>Incline DB Press</td>
+              <td>4x6</td>
+              <td>2.5min</td>
+              <td>8</td>
+              <td>75-80° angle, control eccentric</td>
+            </tr>
+            <tr>
+              <td>Bent Over Barbell Row</td>
+              <td>4x6</td>
+              <td>2.5min</td>
+              <td>8</td>
+              <td>Hip-hinge position, explosive concentric</td>
+            </tr>
+            <tr>
+              <td>DB Shoulder Press</td>
+              <td>3x8</td>
+              <td>2min</td>
+              <td>7</td>
+              <td>Seated or standing, full ROM</td>
+            </tr>
+            <tr>
+              <td>Face Pulls</td>
+              <td>3x12</td>
+              <td>90s</td>
+              <td>7</td>
+              <td>Cable or band, rear delt health</td>
+            </tr>
+            <tr>
+              <td>Hammer Curls</td>
+              <td>3x10</td>
+              <td>60s</td>
+              <td>7</td>
+              <td>Neutral grip, control movement</td>
+            </tr>
+            <tr>
+              <td>Close-Grip Push-ups</td>
+              <td>3x10-12</td>
+              <td>60s</td>
+              <td>7</td>
+              <td>Hands close together, tricep focus</td>
+            </tr>
+          </table>
+
+          <h3>Day 4 - Tempo Run + Recovery (Saturday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Segment</th>
+              <th>Details</th>
+              <th>RPE</th>
+              <th>Purpose</th>
+            </tr>
+            <tr>
+              <td>Warm-up Walk/Jog</td>
+              <td>1km @ 5:30/km</td>
+              <td>4</td>
+              <td>Gentle preparation</td>
+            </tr>
+            <tr>
+              <td>Main Tempo Run</td>
+              <td>6km @ 5:10/km</td>
+              <td>7</td>
+              <td>Comfortably hard, conversational</td>
+            </tr>
+            <tr>
+              <td>Strides</td>
+              <td>6x100m @ 4:30/km</td>
+              <td>8</td>
+              <td>60s walk recovery, leg turnover</td>
+            </tr>
+            <tr>
+              <td>Cool-down Walk</td>
+              <td>10 min easy walking</td>
+              <td>3</td>
+              <td>Complete recovery</td>
+            </tr>
+            <tr>
+              <td>Recovery Protocol</td>
+              <td>15min stretching + foam roll</td>
+              <td>-</td>
+              <td>Full body recovery session</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- BLOCK 2: WEEKS 5-8 -->
+        <div class="week-header" id="block2">📅 BLOCK 2: STRENGTH DEVELOPMENT - WEEKS 5-8</div>
+
+        <div class="section fade-in">
+          <h2>WEEK 5</h2>
+
+          <div class="progress-tracker">
+            <h4>Block 2 Focus Shift</h4>
+            <p>
+              Transition to lower rep, higher intensity strength work. Running progresses to longer intervals and goal
+              pace segments. Session structure becomes more demanding.
+            </p>
+          </div>
+
+          <h3>Day 1 - Max Strength Lower + Power (Monday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Exercise</th>
+              <th>Sets x Reps</th>
+              <th>Rest</th>
+              <th>RPE</th>
+              <th>Coaching Notes</th>
+            </tr>
+            <tr>
+              <td>Dynamic Warm-up</td>
+              <td>12 min</td>
+              <td>-</td>
+              <td>4</td>
+              <td>Extended prep for heavy loads</td>
+            </tr>
+            <tr>
+              <td>Depth Jumps</td>
+              <td>4x3</td>
+              <td>2min</td>
+              <td>9</td>
+              <td>30cm box, max effort reactive landing</td>
+            </tr>
+            <tr>
+              <td>Back Squat</td>
+              <td>5x3</td>
+              <td>4min</td>
+              <td>9</td>
+              <td>85-90% 1RM, perfect form essential</td>
+            </tr>
+            <tr>
+              <td>Sumo Deadlift</td>
+              <td>4x3</td>
+              <td>3min</td>
+              <td>9</td>
+              <td>Heavy load, explosive intent</td>
+            </tr>
+            <tr>
+              <td>Walking Lunges</td>
+              <td>3x10/leg</td>
+              <td>2min</td>
+              <td>8</td>
+              <td>Weighted, controlled movement</td>
+            </tr>
+            <tr>
+              <td>Single Leg RDL</td>
+              <td>3x6/leg</td>
+              <td>90s</td>
+              <td>7</td>
+              <td>Balance and hamstring focus</td>
+            </tr>
+            <tr>
+              <td>Hanging Leg Raises</td>
+              <td>3x8</td>
+              <td>90s</td>
+              <td>8</td>
+              <td>Control movement, avoid swinging</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- BLOCK 3: WEEKS 9-12 -->
+        <div class="week-header" id="block3">📅 BLOCK 3: PERFORMANCE INTEGRATION - WEEKS 9-12</div>
+
+        <div class="section fade-in">
+          <h2>WEEK 12 - PEAK PERFORMANCE</h2>
+
+          <div class="progress-tracker">
+            <h4>Peak Week Protocol</h4>
+            <p>
+              <strong>FINAL WEEK:</strong> Demonstrate all fitness gains. Maintain intensity, reduce volume
+              significantly. Execute goal attempts with confidence.
+            </p>
+          </div>
+
+          <h3>Day 4 - 10K GOAL ATTEMPT (Friday)</h3>
+          <table class="workout-table">
+            <tr>
+              <th>Segment</th>
+              <th>Details</th>
+              <th>Target</th>
+              <th>Strategy</th>
+            </tr>
+            <tr>
+              <td>Race Warm-up</td>
+              <td>3km progressive + strides</td>
+              <td>Feel ready and loose</td>
+              <td>Replicate race day preparation</td>
+            </tr>
+            <tr>
+              <td>10K TIME TRIAL</td>
+              <td>Maximum 10K effort</td>
+              <td>SUB-50:00 (4:59/km avg)</td>
+              <td>Even pacing, strong finish</td>
+            </tr>
+            <tr>
+              <td>Celebration Cool-down</td>
+              <td>2km easy + walking</td>
+              <td>Recovery focused</td>
+              <td>Celebrate your achievement!</td>
+            </tr>
+          </table>
+
+          <div class="tips-box">
+            <h4>🏁 10K Race Day Strategy</h4>
+            <p><strong>Pacing Plan:</strong> Target 4:59/km average pace</p>
+            <p>• <strong>KM 1-2:</strong> 5:02-5:05/km (slightly conservative start)</p>
+            <p>• <strong>KM 3-7:</strong> 4:58-5:00/km (settle into goal pace)</p>
+            <p>• <strong>KM 8-9:</strong> 4:55-4:58/km (maintain with focus)</p>
+            <p>• <strong>KM 10:</strong> 4:50-4:55/km (strong finish if feeling good)</p>
+            <p>
+              <strong>Mental Strategy:</strong> Break race into 2.5km segments. Stay relaxed, focus on form and
+              breathing.
+            </p>
+          </div>
+
+          <div class="tips-box">
+            <h4>🎯 Week 12 Final Goals Checklist</h4>
+            <p><strong>Program Completion Targets:</strong></p>
+            <p>✅ <strong>15+ bodyweight pull-ups</strong> (strength goal)</p>
+            <p>✅ <strong>10K time under 50:00</strong> (4:59/km average pace)</p>
+            <p>✅ <strong>Vertical jump 2.45m+ maintained</strong> (power retention)</p>
+            <p>✅ <strong>All major lifts improved from baseline</strong> (strength gains)</p>
+            <p>✅ <strong>Sessions completed in under 60 minutes</strong> (efficiency)</p>
+            <p>✅ <strong>Body composition improvements</strong> (muscle gain, fat loss)</p>
+          </div>
+        </div>
+
+        <!-- FINAL PROGRAM NOTES -->
+        <div class="section fade-in" id="completion">
+          <h2>📋 FINAL PROGRAM NOTES & PROGRESSION TRACKING</h2>
+
+          <div class="progress-tracker">
+            <h4>🔄 Weekly Progression Guidelines</h4>
+            <p>
+              <strong>Strength Progression:</strong> Increase loads by 2-5% weekly during building phases. Focus on
+              quality over quantity.
+            </p>
+            <p>
+              <strong>Running Progression:</strong> Paces progress systematically from aerobic base to race-specific
+              speeds.
+            </p>
+            <p>
+              <strong>Pull-up Progression:</strong> Week 1-4: Build to 8+ reps, Week 5-8: Add weight or volume, Week
+              9-12: High volume (12+ reps)
+            </p>
+            <p>
+              <strong>Recovery Integration:</strong> Deload weeks (4, 8) are crucial. Use for mobility, testing, and
+              adaptation.
+            </p>
+          </div>
+
+          <div class="mobility-box">
+            <h4>📱 Recommended Apps & Tools</h4>
+            <p><strong>Running Apps:</strong> Strava, Garmin Connect, or similar GPS tracking</p>
+            <p><strong>Interval Timer:</strong> For workout rest periods and interval training</p>
+            <p><strong>Heart Rate Monitor:</strong> Optional but helpful for pacing guidance</p>
+            <p><strong>Training Log:</strong> Track weights, times, and subjective feelings</p>
+            <p><strong>Mobility Videos:</strong> All links provided lead to instructional content</p>
+          </div>
+
+          <div class="exercise-guide">
+            <h4>⚠️ Safety & Modification Guidelines</h4>
+            <p><strong>Listen to Your Body:</strong> RPE is subjective - adjust based on daily readiness</p>
+            <p><strong>Injury Prevention:</strong> Never skip warm-ups or cool-downs</p>
+            <p><strong>Exercise Modifications:</strong> Can't do pull-ups? Use assisted versions or lat pulldowns</p>
+            <p><strong>Running Surface:</strong> Vary between track, road, and treadmill for joint health</p>
+            <p><strong>Weather Adaptations:</strong> Indoor alternatives available for all running sessions</p>
+          </div>
+
+          <div class="tips-box">
+            <h4>🎓 Program Completion & Beyond</h4>
+            <p><strong>Post-Program Options:</strong></p>
+            <p>• Repeat program with higher baseline numbers</p>
+            <p>• Focus on strength with 5/3/1 or similar program</p>
+            <p>• Specialize in running with dedicated endurance plan</p>
+            <p>• Transition to sport-specific training</p>
+            <p><strong>Maintenance Phase:</strong> 2-3 sessions per week can maintain most gains</p>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="section" style="text-align: center; border-bottom: none">
+          <h2 style="color: #3498db">🏆 CONGRATULATIONS ON COMPLETING THE PROGRAM!</h2>
+          <p style="font-size: 1.1em; margin: 20px 0">
+            You've successfully combined strength and endurance training to achieve multiple challenging goals
+            simultaneously.
+          </p>
+          <p style="font-style: italic; color: #7f8c8d">
+            Elite performance requires elite commitment. You've demonstrated both.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" onclick="scrollToTop()" title="Back to top">↑</button>
+
+    <script>
+      // Navigation functionality
+      const mobileToggle = document.getElementById('mobileToggle')
+      const navMenu = document.getElementById('navMenu')
+      const navLinks = document.querySelectorAll('.nav-link')
+      const progressBar = document.getElementById('progressBar')
+
+      // Mobile menu toggle
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active')
+      })
+
+      // Smooth scrolling for navigation links
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault()
+          const targetId = link.getAttribute('href').substring(1)
+          const targetElement = document.getElementById(targetId)
+
+          if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 80
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth',
+            })
+          }
+
+          // Close mobile menu
+          navMenu.classList.remove('active')
+
+          // Update active link
+          navLinks.forEach((l) => l.classList.remove('active'))
+          link.classList.add('active')
+        })
+      })
+
+      // Progress bar functionality
+      function updateProgressBar() {
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        progressBar.style.width = Math.min(scrolled, 100) + '%'
+      }
+
+      // Scroll event listeners
+      window.addEventListener('scroll', () => {
+        updateProgressBar()
+
+        // Update active navigation based on scroll position
+        const sections = document.querySelectorAll('.section[id], .week-header[id]')
+        let current = ''
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id')
+          }
+        })
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active')
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active')
+          }
+        })
+      })
+
+      // Scroll to top function
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }
+
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      }, observerOptions)
+
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el)
+      })
+
+      // RPE scale interactivity
+      document.querySelectorAll('.rpe-item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+          // Remove active class from all items
+          document.querySelectorAll('.rpe-item').forEach((i) => i.classList.remove('active'))
+          // Add active class to clicked item
+          item.classList.add('active')
+
+          // Show tooltip or additional info
+          const rpeValue = index + 1
+          const descriptions = [
+            'Very Easy - Minimal effort',
+            'Very Easy - Light activity',
+            'Easy - Can talk easily',
+            'Easy - Comfortable pace',
+            'Moderate - Somewhat hard',
+            'Moderate - Getting harder',
+            'Hard - Difficult but sustainable',
+            'Very Hard - Very difficult',
+            'Extremely Hard - Nearly maximal',
+            'Maximum - All-out effort',
+          ]
+
+          // You could show a tooltip here
+          console.log(`RPE ${rpeValue}: ${descriptions[index]}`)
+        })
+      })
+
+      // Goal card hover effects
+      document.querySelectorAll('.goal-card').forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-8px) scale(1.02)'
+        })
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0) scale(1)'
+        })
+      })
+
+      // Workout table row highlighting
+      document.querySelectorAll('.workout-table tr').forEach((row) => {
+        if (row.querySelector('td')) {
+          // Skip header rows
+          row.addEventListener('click', () => {
+            row.classList.toggle('highlighted')
+          })
+        }
+      })
+
+      // Initialize the page
+      document.addEventListener('DOMContentLoaded', () => {
+        updateProgressBar()
+
+        // Set first nav item as active
+        if (navLinks.length > 0) {
+          navLinks[0].classList.add('active')
+        }
+
+        // Add some initial animation
+        setTimeout(() => {
+          document.querySelectorAll('.fade-in').forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add('visible')
+            }, index * 100)
+          })
+        }, 500)
+      })
+    </script>
+  </body>
+</html>
